@@ -42,6 +42,7 @@ export default function HomePage() {
             <li><Link href="/api/request" className="text-blue-600 hover:underline">/api/request</Link> - API request tester UI</li>
             <li><Link href="/price?type=coin&symbol=XRP" className="text-blue-600 hover:underline">/price?type=coin&symbol=XRP</Link> - View crypto price</li>
             <li><Link href="/price?type=stock&symbol=VNM" className="text-blue-600 hover:underline">/price?type=stock&symbol=VNM</Link> - View stock price</li>
+            <li><Link href="/privacy" className="text-blue-600 hover:underline">/privacy</Link> - Privacy policy (mở dữ liệu, cho phép crawl)</li>
           </ul>
         </div>
       </div>

@@ -18,12 +18,22 @@ export async function GET(request: NextRequest) {
   const type = searchParams.get('type');
   const symbol = searchParams.get('symbol');
 
-  console.log('🔍 [/price] Request:', { type, symbol, timestamp: new Date().toISOString() });
+  console.log('🔍 [/price] Request:', { 
+    type, 
+    symbol, 
+    fullUrl: request.url,
+    allParams: Object.fromEntries(searchParams.entries()),
+    timestamp: new Date().toISOString() 
+  });
 
   if (!type || !symbol) {
-    console.error('❌ [/price] Error: Missing parameters');
+    console.error('❌ [/price] Error: Missing parameters', { 
+      type, 
+      symbol,
+      receivedParams: Object.fromEntries(searchParams.entries())
+    });
     return new Response(
-      'Error: Missing parameters',
+      `Error: Missing parameters (type=${type}, symbol=${symbol})`,
       { 
         status: 400,
         headers: {
